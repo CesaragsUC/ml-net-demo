@@ -1,0 +1,263 @@
+﻿{
+  "Scenario": "Classification",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "G:\\DevProjetos\\AI\\MLSampleApp\\MLRestaurantScore\\Data\\RestaurantScores\\RestaurantScores.tsv",
+    "Delimiter": "\t",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "InspectionType",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ViolationDescription",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "RiskCategory",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 1.0,
+        "RuntimeInSeconds": 2.146,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "InputColumnName": "InspectionType",
+            "OutputColumnName": "InspectionType"
+          },
+          "e1": {
+            "InputColumnName": "ViolationDescription",
+            "OutputColumnName": "ViolationDescription"
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "InspectionType",
+              "ViolationDescription"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "RiskCategory",
+            "InputColumnName": "RiskCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 11,
+            "MinimumExampleCountPerLeaf": 26,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 217,
+            "FeatureFraction": 0.93171548660298031,
+            "LearningRate": 0.99999977667298645,
+            "LabelColumnName": "RiskCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.99345798616627912,
+        "RuntimeInSeconds": 2.194,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "InputColumnName": "InspectionType",
+            "OutputColumnName": "InspectionType"
+          },
+          "e1": {
+            "InputColumnName": "ViolationDescription",
+            "OutputColumnName": "ViolationDescription"
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "InspectionType",
+              "ViolationDescription"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "RiskCategory",
+            "InputColumnName": "RiskCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 21,
+            "NumberOfTrees": 9,
+            "MaximumBinCountPerFeature": 201,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.45186649652434391,
+            "LabelColumnName": "RiskCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.96103621749705492,
+        "RuntimeInSeconds": 2.246,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "InputColumnName": "InspectionType",
+            "OutputColumnName": "InspectionType"
+          },
+          "e1": {
+            "InputColumnName": "ViolationDescription",
+            "OutputColumnName": "ViolationDescription"
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "InspectionType",
+              "ViolationDescription"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "RiskCategory",
+            "InputColumnName": "RiskCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 22,
+            "NumberOfTrees": 6,
+            "MaximumBinCountPerFeature": 246,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 0.13651802228919074,
+            "LabelColumnName": "RiskCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.95568775096682435,
+        "RuntimeInSeconds": 2.278,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e11",
+          "e0": {
+            "InputColumnName": "InspectionType",
+            "OutputColumnName": "InspectionType"
+          },
+          "e1": {
+            "InputColumnName": "ViolationDescription",
+            "OutputColumnName": "ViolationDescription"
+          },
+          "e11": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnNames": [
+              "InspectionType",
+              "ViolationDescription"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e3": {
+            "OutputColumnName": "RiskCategory",
+            "InputColumnName": "RiskCategory",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "RiskCategory",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "FeaturizeText",
+      "e1": "FeaturizeText",
+      "e2": "Concatenate",
+      "e3": "MapValueToKey",
+      "e4": "FastTreeOva",
+      "e5": "FastForestOva",
+      "e6": "LightGbmMulti",
+      "e7": "LbfgsLogisticRegressionOva",
+      "e8": "LbfgsMaximumEntropyMulti",
+      "e9": "SdcaMaximumEntropyMulti",
+      "e10": "SdcaLogisticRegressionOva",
+      "e11": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * (e4 + e5 + e6 + e7 + e8 + e9 + e10) * e11",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "G:\\DevProjetos\\AI\\MLSampleApp\\MLRestaurantScore\\RestaurantViolationsPrediction.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 10,
+    "LabelColumn": "RiskCategory",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}

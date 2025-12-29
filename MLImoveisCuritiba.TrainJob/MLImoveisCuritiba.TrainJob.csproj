@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.1" />
+		<PackageReference Include="Microsoft.Extensions.ML" Version="5.0.0" />
+		<PackageReference Include="Microsoft.ML" Version="5.0.0" />
+		<PackageReference Include="Microsoft.ML.FastTree" Version="5.0.0" />
+		<PackageReference Include="Microsoft.ML.LightGbm" Version="4.0.0" />
+		<PackageReference Include="Quartz" Version="3.15.1" />
+		<PackageReference Include="Quartz.Extensions.Hosting" Version="3.15.1" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\MLImoveisCuritiba.Shared\MLImoveisCuritiba.Shared.csproj" />
+	</ItemGroup>
+</Project>

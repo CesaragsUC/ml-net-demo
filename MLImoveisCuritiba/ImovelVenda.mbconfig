@@ -1,0 +1,503 @@
+﻿{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "G:\\DevProjetos\\AI\\MLSampleApp\\MLImoveisCuritiba\\Data\\curitiba_imoveis_ml_poc_v2.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Cidade",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Bairro",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Estado",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CEP",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "QtdQuartos",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Piscina",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Tipo",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "AnoConstrucao",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "AnoReferencia",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "AreaM2",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "VagasGaragem",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CondominioMensal",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "DistCentroKm",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ProxParque",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "PrecoVenda",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.83892674328353656,
+        "RuntimeInSeconds": 0.51,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ],
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ],
+            "InputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Bairro",
+            "OutputColumnName": "Bairro"
+          },
+          "e3": {
+            "InputColumnName": "CEP",
+            "OutputColumnName": "CEP"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque",
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm",
+              "Bairro",
+              "CEP"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 5,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.9099,
+            "LabelColumnName": "PrecoVenda",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.83578418594621728,
+        "RuntimeInSeconds": 0.514,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ],
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ],
+            "InputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Bairro",
+            "OutputColumnName": "Bairro"
+          },
+          "e3": {
+            "InputColumnName": "CEP",
+            "OutputColumnName": "CEP"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque",
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm",
+              "Bairro",
+              "CEP"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "PrecoVenda",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmRegression",
+        "Score": 0.82610454193439575,
+        "RuntimeInSeconds": 0.106,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e7",
+          "e0": {
+            "OutputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ],
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ],
+            "InputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Bairro",
+            "OutputColumnName": "Bairro"
+          },
+          "e3": {
+            "InputColumnName": "CEP",
+            "OutputColumnName": "CEP"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque",
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm",
+              "Bairro",
+              "CEP"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "PrecoVenda",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.82054932477600317,
+        "RuntimeInSeconds": 0.499,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ],
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ],
+            "InputColumnNames": [
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Bairro",
+            "OutputColumnName": "Bairro"
+          },
+          "e3": {
+            "InputColumnName": "CEP",
+            "OutputColumnName": "CEP"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Cidade",
+              "Estado",
+              "Piscina",
+              "Tipo",
+              "ProxParque",
+              "QtdQuartos",
+              "AnoConstrucao",
+              "AnoReferencia",
+              "AreaM2",
+              "VagasGaragem",
+              "CondominioMensal",
+              "DistCentroKm",
+              "Bairro",
+              "CEP"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 7,
+            "FeatureFraction": 0.89647514,
+            "LabelColumnName": "PrecoVenda",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "FeaturizeText",
+      "e3": "FeaturizeText",
+      "e4": "Concatenate",
+      "e5": "FastTreeRegression",
+      "e6": "FastForestRegression",
+      "e7": "LightGbmRegression",
+      "e8": "LbfgsPoissonRegressionRegression",
+      "e9": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4 * (e5 + e6 + e7 + e8 + e9)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "G:\\DevProjetos\\AI\\MLSampleApp\\MLImoveisCuritiba\\ImovelVenda.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 10,
+    "LabelColumn": "PrecoVenda",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="MLImoveisCuritiba.Shared/MLImoveisCuritiba.Shared.csproj" />
+  <Project Path="MLImoveisCuritiba.TrainJob/MLImoveisCuritiba.TrainJob.csproj" />
+  <Project Path="MLImoveisCuritiba.WebApi/MLImoveisCuritiba.WebApi.csproj" />
+  <Project Path="MLImoveisCuritiba/MLImoveisCuritibaApp.csproj" />
+  <Project Path="MLRestaurantScore/MLRestaurantScore.csproj" />
+  <Project Path="MLSampleApp/MLFactorySampleApp.csproj" />
+  <Project Path="PredictiveModel_WebApi1/MLFactorySampleApp.WebApi.csproj" />
+</Solution>
